@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter, FaCalculator } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import FotoKike from "../assets/Foto-Kike.jpeg";
 
 const PersonalLandingPage: React.FC = () => {
@@ -32,6 +33,12 @@ const PersonalLandingPage: React.FC = () => {
     },
   ];
 
+  const handleLinkClick = (url: string) => {
+    // Construye la URL completa con el basename en producción
+    const base = process.env.NODE_ENV === "production" ? "/Landing-Kike" : "";
+    window.open(`${base}${url}`, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="min-h-screen bg-background dark:bg-dark-2 flex items-center justify-center p-4 sm:p-6">
       <div
@@ -42,7 +49,6 @@ const PersonalLandingPage: React.FC = () => {
           hover:-translate-y-2 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-primary
         `}
       >
-        {/* Encabezado con foto de perfil */}
         <div className="relative mb-6">
           <img
             src={FotoKike}
@@ -57,23 +63,36 @@ const PersonalLandingPage: React.FC = () => {
           {personalInfo.description}
         </p>
 
-        {/* Lista de enlaces */}
         <div className="space-y-4">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center py-3 px-6 text-text-dark dark:text-text-primary bg-primary rounded-[25px] border-2 border-primary uppercase tracking-wider transition-all duration-300 hover:bg-transparent hover:text-primary hover:scale-105"
-            >
-              {link.icon && <span className="mr-3">{link.icon}</span>}
-              {link.title}
-            </a>
-          ))}
+          {links.map((link, index) =>
+            link.url.startsWith("http") ? (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center py-3 px-6 text-text-dark dark:text-text-primary bg-primary rounded-[25px] border-2 border-primary uppercase tracking-wider transition-all duration-300 hover:bg-transparent hover:text-primary hover:scale-105"
+              >
+                {link.icon && <span className="mr-3">{link.icon}</span>}
+                {link.title}
+              </a>
+            ) : (
+              <Link
+                key={index}
+                to={link.url}
+                onClick={(e) => {
+                  e.preventDefault(); // Evita la navegación por defecto de Link
+                  handleLinkClick(link.url);
+                }}
+                className="flex items-center justify-center py-3 px-6 text-text-dark dark:text-text-primary bg-primary rounded-[25px] border-2 border-primary uppercase tracking-wider transition-all duration-300 hover:bg-transparent hover:text-primary hover:scale-105"
+              >
+                {link.icon && <span className="mr-3">{link.icon}</span>}
+                {link.title}
+              </Link>
+            )
+          )}
         </div>
 
-        {/* Pie de página */}
         <p className="mt-8 text-sm text-gray-500 dark:text-gray-300">
           © {new Date().getFullYear()} {personalInfo.name}
         </p>
