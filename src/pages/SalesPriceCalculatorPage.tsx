@@ -165,7 +165,7 @@ const SalesPriceCalculatorPage: React.FC = () => {
               onClick={() => setShowCostTooltip(!showCostTooltip)}
             />
             {showCostTooltip && (
-              <div className="absolute bg-sky-200 text-gray-800 text-xs sm:text-sm p-4 rounded shadow-lg top-6 right-0 w-[896px] max-h-[50vh] overflow-y-auto z-10">
+              <div className="absolute bg-sky-200 text-gray-800 text-xs sm:text-sm p-4 rounded shadow-lg top-6 right-0 w-[85vw] sm:w-[600px] max-w-[90vw] max-h-[50vh] overflow-y-auto z-10">
                 {INFO_TOOLTIP_TEXT.split("\n").map((line, index) => {
                   const isTitle = line.match(/^\d+-/);
                   return (
@@ -655,7 +655,7 @@ const SalesPriceCalculatorPage: React.FC = () => {
                 onClick={() => setShowPricingTooltip(!showPricingTooltip)}
               />
               {showPricingTooltip && (
-                <div className="absolute bg-sky-200 text-gray-800 text-xs sm:text-sm p-4 rounded shadow-lg bottom-6 right-0 w-[896px] max-h-[50vh] overflow-y-auto z-10">
+                <div className="absolute bg-sky-200 text-gray-800 text-xs sm:text-sm p-4 rounded shadow-lg bottom-6 right-0 w-[85vw] sm:w-[600px] max-w-[90vw] max-h-[50vh] overflow-y-auto z-10">
                   {PRICING_PSYCHOLOGY_TOOLTIP_TEXT.split("\n").map(
                     (line, index) => {
                       const isTitle = line.match(/^\d+-/);

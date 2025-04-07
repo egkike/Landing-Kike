@@ -24,7 +24,7 @@ const FinancialToolsPage: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl font-bold text-text-dark dark:text-text-primary mb-3 tracking-tight">
           Herramientas Financieras
         </h1>
-        <p className="text-sm sm:text-base text-text-dark dark:text-gray-100 mb-8 leading-relaxed">
+        <p className="text-sm sm:text-base text-[#0fbcf9] mb-8 leading-relaxed">
           Calcula, proyecta y toma decisiones sobre tu negocio apoyado en datos
           financieros sólidos.
         </p>
@@ -46,7 +46,7 @@ const FinancialToolsPage: React.FC = () => {
         </div>
 
         {/* Pie de página */}
-        <p className="mt-8 text-sm text-gray-500 dark:text-gray-300">
+        <p className="mt-8 text-sm text-[#0fbcf9]">
           © {new Date().getFullYear()} Kike Garcia
         </p>
       </div>

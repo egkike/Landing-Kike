@@ -59,7 +59,7 @@ const PersonalLandingPage: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl font-bold text-text-dark dark:text-text-primary mb-3 tracking-tight">
           {personalInfo.name}
         </h1>
-        <p className="text-sm sm:text-base text-text-dark dark:text-gray-100 mb-8 leading-relaxed">
+        <p className="text-sm sm:text-base text-[#0fbcf9] mb-8 leading-relaxed">
           {personalInfo.description}
         </p>
 
@@ -93,7 +93,7 @@ const PersonalLandingPage: React.FC = () => {
           )}
         </div>
 
-        <p className="mt-8 text-sm text-gray-500 dark:text-gray-300">
+        <p className="mt-8 text-sm text-[#0fbcf9]">
           © {new Date().getFullYear()} {personalInfo.name}
         </p>
       </div>

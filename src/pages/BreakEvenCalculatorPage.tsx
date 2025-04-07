@@ -276,7 +276,7 @@ const BreakEvenCalculatorPage: React.FC = () => {
             onClick={() => setShowTooltip(!showTooltip)}
           />
           {showTooltip && (
-            <div className="absolute bg-sky-200 text-gray-800 text-xs sm:text-sm p-4 rounded shadow-lg top-6 right-0 w-[896px] max-h-[50vh] overflow-y-auto z-10">
+            <div className="absolute bg-sky-200 text-gray-800 text-xs sm:text-sm p-4 rounded shadow-lg top-6 right-0 w-[85vw] sm:w-[600px] max-w-[90vw] max-h-[50vh] overflow-y-auto z-10">
               {BREAK_EVEN_TOOLTIP_TEXT.split("\n").map((line, index) => {
                 const isTitle = line.match(/^\d+-/);
                 return (
