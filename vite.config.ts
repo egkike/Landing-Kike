@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Landing-Kike/", // Ajusta al nombre exacto del repositorio
+  base: process.env.NODE_ENV === 'production' ? '/Landing-Kike/' : '/',
   resolve: {
     alias: {
       "/main.tsx": path.resolve(__dirname, "src/main.tsx"),
