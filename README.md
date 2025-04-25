@@ -1,8 +1,9 @@
-# Landing Page de Kike Garcia
+# Landing Page de Kike Garcia:
+https://egkike.github.io/Landing-Kike
 
 ## Paso 1: Configurar el proyecto
 
-1.1. Crear el proyecto con Vite
+1.1. Crear el proyecto con Vite-React-TypeScrip
 
 Ejecuta este comando para iniciar un proyecto React con TypeScript:
 
